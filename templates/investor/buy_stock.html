@@ -1,14 +1,18 @@
-{% extends '../investor/base.html' %}
+{% extends 'investor/base.html' %}
 {% load static %}
 {% block content %}
 <br><br>
+    <h1>Stock</h1>
+    {% for stock in stocks %}
 <div class="card" style="width: 20rem; border:2px;">
-    <img src="{% static '../../static/assets/images/features2.jpg' %}" class="card-img-top">
+    <img src="{{ stock.logo.url }}" class="card-img-top">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{ stock.name }}</h5>
+      <p class="card-text">{{ stock.bio }}</p>
+        <p>{{ stock.price }}</p>
       <a href="#" class="btn btn-primary">Buy Stock</a>
     </div>
   </div>
 
+    {% endfor %}
 {% endblock %}

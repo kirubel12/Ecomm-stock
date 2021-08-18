@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
+from company.models import PostModel
 
 def Home(request):
     return render(request, 'investor/index.html')
@@ -51,7 +51,9 @@ def Dashboard(request):
 
 
 def Buystock(request):
-    return render(request, 'investor/buy_stock.html')
+    Stocks = PostModel.objects.all()
+    context = {'stocks':Stocks}
+    return render(request, 'investor/buy_stock.html', context)
 
 
 def Logoutuser(request):
