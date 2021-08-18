@@ -1,0 +1,39 @@
+{% extends 'company/base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br>
+<section class="form7 cid-sFZdgA8Hr1" id="form7-j">
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Login Now</strong></h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="{% url 'login-comp' %}" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
+                    {% csrf_token %}
+                    <input type="hidden" name="email" data-form-email="true" value="0ubA49IeGFwJzp/xbQZpkg4WOswAM6l0ab4Ibx9SMGaJ9uQ3ARPp/QLqwJo00/LWBFn131AXUa9XF9UtlWs8vcDaI44sa5iHSF1ZF/z6usD0udC/E6ciOLcQZ8kIkwPl">
+                    <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">Login and post stock</p>
+                    <div class="dragArea row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="username">
+                            <input type="text" name="username" placeholder="Enter username" data-form-field="username" class="form-control" value="" id="name-form7-j">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="password1">
+                            <input type="password" name="password1" placeholder="Enter password" data-form-field="password1" class="form-control" value="" id="name-form7-j">
+                        </div>
+                        
+                        <div class="col-auto mbr-section-btn align-center">
+                            <button type="submit" class="btn btn-primary display-4">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock%}

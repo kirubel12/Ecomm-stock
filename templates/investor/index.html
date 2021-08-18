@@ -1,0 +1,130 @@
+
+{% extends '../investor/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    
+    <section class="header1 cid-sFW6fXqj5q mbr-fullscreen mbr-parallax-background" id="header1-1">
+    
+        
+    
+        <div class="mbr-overlay" style="opacity: 0.1; background-color: rgb(250, 250, 250);"></div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2"><strong>Why we want you to be rich!</strong></h1>
+                    
+                    <p class="mbr-text mbr-fonts-style display-7">"Every once in a while, the market does something so stupid it takes your breath away."</p>
+                    <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="{% url 'register'%}">Register Now<br></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features3 cid-sFW9J7KeAl" id="features3-4">
+        
+        
+        <div class="container">
+            <div class="mbr-section-head">
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Features</strong></h4>
+                
+            </div>
+            <div class="row mt-4">
+                <div class="item features-image сol-12 col-md-6 col-lg-4 active">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="{% static 'assets/images/authentication.png' %}" alt="" data-slide-to="1">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7"><strong>User Authentication</strong></h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">This will allow to user to register, login and logout with full encrypted data</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="item features-image сol-12 col-md-6 col-lg-4">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="{% static 'assets/images/user-friendly.png' %}" data-slide-to="2" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7"><strong>User Friendly</strong></h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">it is user friendly every function and feature is clear as water so that the user is to do anything he likes</p>
+                        </div>
+                        
+                    </div>
+                </div><div class="item features-image сol-12 col-md-6 col-lg-4">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="{% static 'assets/images/features2.jpg' %}" data-slide-to="0">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7"><strong>Mobile Friendly</strong></h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">You don't have to code to create your own
+                                site. Select one of available themes in the Mobirise Site Maker.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="form3 cid-sFYhxdXpRK" id="form3-b">
+    
+        
+    
+        
+    
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-12">
+                    <div class="image-wrapper">
+                        <img class="w-100" src="{% static 'assets/images/features6.jpg' %}" alt="Mobirise">
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
+                    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="Y3EL1rFfKBOMhJjTZml57gNamqw7D56PiaTVK7JCP5y0PqO16Y8w1FohQrlKPioPW+F3dhY63u0+O56HoG3k1Ze1xpsditB3Jp1k2oupwurfn8uxlpGAVpImFLdzAoPT">
+                        <div class="row">
+                            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out
+                                the form!</div>
+                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
+                                problem!</div>
+                        </div>
+                        <div class="dragArea row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h1 class="mbr-section-title mb-4 display-2">
+                                    <strong>Contact Us</strong>
+                                </h1>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="mbr-text mbr-fonts-style mb-4 display-7">Fill this form and we'll get back to you
+                                    soon.</p>
+                            </div>
+                            <div data-for="name" class="col-lg-12 col-md col-sm-12 form-group">
+                                <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-form3-b">
+                            </div>
+                            <div class="col-lg-12 col-md col-sm-12 form-group" data-for="email">
+                                <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-form3-b">
+                            </div>
+                            <div class="col-md-auto col-12 mbr-section-btn">
+                                <button type="submit" class="btn btn-black display-4">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="offset-lg-1"></div>
+            </div>
+        </div>
+    </section>
+    
+
+
+{% endblock%}
