@@ -11,7 +11,6 @@ class PostForm(ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control ','placeholder':'Enter name'}),
             'bio': forms.Textarea(attrs={'class': 'form-control','placeholder':'Enter bio'}),
-            'logo': forms.TextInput(attrs={'class':'form-control','type':'file'}),
             'price': forms.TextInput(attrs={'class': 'form-control ', 'placeholder': 'Enter Price'}),
 
 
