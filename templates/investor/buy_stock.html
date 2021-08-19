@@ -1,18 +1,25 @@
 {% extends 'investor/base.html' %}
 {% load static %}
 {% block content %}
-<br><br>
+    <br><br>
     <h1>Stock</h1>
     {% for stock in stocks %}
-<div class="card" style="width: 20rem; border:2px;">
-    <img src="{{ stock.logo.url }}" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">{{ stock.name }}</h5>
-      <p class="card-text">{{ stock.bio }}</p>
-        <p>{{ stock.price }}</p>
-      <a href="#" class="btn btn-primary">Buy Stock</a>
-    </div>
-  </div>
 
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="">
+                    <div class="card-body ">
+
+                        <img src="{{ stock.logo.url }}" class="card-img-top rounded-right " style="width: 300px; height: 300px">
+                        <h5 class="card-title">{{ stock.name }}</h5>
+                        <p class="card-text">{{ stock.bio }}</p>
+                        <p>{{ stock.price }}</p>
+                        <a href="#" class="btn btn-primary">Buy Stock</a>
+
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
