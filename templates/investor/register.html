@@ -1,4 +1,4 @@
-{% extends '../investor/base.html' %}
+{% extends 'investor/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -13,29 +13,31 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="{% url 'register'%}" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
-                    {% csrf_token %}
+               <form action="{% url 'register'%}" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
+                  {% csrf_token %}
+
+
                     <input type="hidden" name="email" data-form-email="true" value="fdBBmsFQz7NewLlJaJeaCtnyNklV6DfbqKuwkNQEnthEg8hMVmOqKNz6j6k4TxT6g7lB3mCDCE29ZmfvledYUmHbWAML2og8ozVr3gJRqDbdDRGD4J7KhFVB43hLuS2v">
                     <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">your account information is encrypted&nbsp;</p>
-            
-                    <div class="dragArea row">
+
+                    <div class="dragArea row ">
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="username">
-                            <input type="text" name="username" placeholder="Enter username" data-form-field="username" class="form-control" value="" id="name-form7-c">
+                          Username: {{ form.username }}
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="email">
-                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-form7-c">
+                           Email: {{ form.email }}
                         </div>
                         <div data-for="firstname" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input type="text" name="firstname" placeholder="Enter Firstnme" data-form-field="firstname" class="form-control" value="" id="phone-form7-c">
+                          First Name: {{ form.first_name }}
                         </div>
                         <div data-for="lastname" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input type="text" name="lastname" placeholder="Enter Lastname" data-form-field="lastname" class="form-control" value="" id="phone-form7-c">
+                           Last Name: {{ form.last_name }}
                         </div>
                         <div data-for="password1" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input type="password" name="password1" placeholder="Enter Password" data-form-field="password1" class="form-control" value="" id="phone-form7-c">
+                           Password: {{ form.password1 }}
                         </div>
                         <div data-for="password2" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input type="password" name="password2" placeholder="Enter Password again" data-form-field="password2" class="form-control" value="" id="phone-form7-c">
+                            Password-conf: {{ form.password2 }}
                         </div>
                         <div class="col-auto mbr-section-btn align-center">
                             <button type="submit" class="btn btn-primary display-4">Register</button>
