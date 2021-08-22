@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 class PostModel(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=False, null=False)
     bio = models.TextField(blank=False, null=False)
     logo = models.ImageField(blank=False, null=False, upload_to='images/posty')

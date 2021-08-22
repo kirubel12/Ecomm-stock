@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login, logout
-
 from company.models import PostModel
 from .decorators import allowed_users, unauthorized_user
 from .forms import CompUserRegistor
@@ -23,6 +22,7 @@ def Register(request):
             return redirect('login')
     context = {'form': form}
     return render(request, 'investor/register.html',context)
+
 
 @unauthorized_user
 def Login(request):
@@ -55,3 +55,11 @@ def Buystock(request):
 def Logoutuser(request):
     logout(request)
     return redirect('home')
+
+
+def PostView(request):
+    return render(request, 'investor/stock.html')
+
+
+def checkout(request):
+    return render(request, 'investor/checkout.html')

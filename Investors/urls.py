@@ -1,5 +1,4 @@
 from django.urls import path
-from django.urls.resolvers import URLPattern
 from . import views
 
 urlpatterns = [
@@ -9,4 +8,5 @@ urlpatterns = [
     path('buy', views.Buystock, name='buy-stock'),
     path('dashboard', views.Dashboard, name='dashboard'),
     path('logout', views.Logoutuser, name='logout'),
+    path('checkout', views.checkout, name='checkout')
 ]

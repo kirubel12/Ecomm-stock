@@ -5,7 +5,7 @@ from .forms import PostForm, UserRegister
 from .decorators import unauthorized_user, allowed_users
 from django.contrib.auth.models import Group
 
-# Create your views here.
+from .models import PostModel
 
 
 def Home(request):
@@ -24,28 +24,6 @@ def Register(request):
             return redirect('login-comp')
     context = {'form': form}
     return render(request, 'company/register.html', context)
-    #     username = request.POST['username']
-    #     first_name = request.POST['firstname']
-    #     last_name = request.POST['lastname']
-    #     email = request.POST['email']
-    #     password1 = request.POST['password1']
-    #     password2 = request.POST['password2']
-    #
-    #     if password1 == password2:
-    #         if User.objects.filter(username=username).exists():
-    #             print("Username already taken")
-    #         elif User.objects.filter(email=email):
-    #             print("Email already taken")
-    #         else:
-    #             user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
-    #                                             email=email, password=password1)
-    #             main = user.save()
-    #             group = Group.objects.get('startup')
-    #             main.groups.add(group)
-    #             return redirect('login-comp')
-    #     else:
-    #         return redirect('register')
-    # return render(request, 'company/register.html')
 
 
 @unauthorized_user
@@ -66,11 +44,16 @@ def LoginCompany(request):
 
 @allowed_users(allowed_roles='startup')
 def Dashboard(request):
-    return render(request, 'company/dashboard.html')
+    current_user = request.user
+    print(current_user.username)
+    StockModel = PostModel.objects.filter(author__username=current_user.username)
+    context = {'stocks':StockModel}
+    return render(request, 'company/dashboard.html',context)
 
 
 @allowed_users(allowed_roles='startup')
 def Post(request):
+
     form = PostForm(request.POST or None, request.FILES or None)
     if request.method == 'POST':
         if form.is_valid():
