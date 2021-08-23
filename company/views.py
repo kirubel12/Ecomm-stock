@@ -44,11 +44,7 @@ def LoginCompany(request):
 
 @allowed_users(allowed_roles='startup')
 def Dashboard(request):
-    current_user = request.user
-    print(current_user.username)
-    StockModel = PostModel.objects.filter(author__username=current_user.username)
-    context = {'stocks':StockModel}
-    return render(request, 'company/dashboard.html',context)
+    return render(request, 'company/dashboard.html')
 
 
 @allowed_users(allowed_roles='startup')
