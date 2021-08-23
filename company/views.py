@@ -76,7 +76,7 @@ def UpdateStock(request, stock_id):
         if form.is_valid():
             form.save()
             print("saved successfully")
-            return redirect('comp-home')
+            return redirect('dashboard-comp')
         else:
             print("error" , form.errors)
     context = {'Stock':Stock,'form':form}

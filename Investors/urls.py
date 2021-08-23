@@ -8,5 +8,5 @@ urlpatterns = [
     path('buy', views.Buystock, name='buy-stock'),
     path('dashboard', views.Dashboard, name='dashboard'),
     path('logout', views.Logoutuser, name='logout'),
-    path('checkout', views.checkout, name='checkout')
+    path('checkout/<int:stock_id>', views.checkout, name='checkout')
 ]

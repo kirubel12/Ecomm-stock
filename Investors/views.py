@@ -61,5 +61,7 @@ def PostView(request):
     return render(request, 'investor/stock.html')
 
 
-def checkout(request):
-    return render(request, 'investor/checkout.html')
+def checkout(request, stock_id):
+    Stock = PostModel.objects.get(pk=stock_id)
+    context = {'Stock':Stock}
+    return render(request, 'investor/checkout.html',context)

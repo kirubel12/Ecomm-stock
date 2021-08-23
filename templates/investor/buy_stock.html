@@ -13,7 +13,7 @@
                         <h5 class="card-title">{{ stock.name }}</h5>
                         <p class="card-text">{{ stock.bio }}</p>
                         <p>{{ stock.price }}</p>
-                        <a href="#" class="btn btn-primary">Buy Stock</a>
+                        <a href="{% url 'checkout' stock.id %}" class="btn btn-primary">Buy Stock</a>
 
                     </div>
                 </div>
