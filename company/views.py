@@ -44,7 +44,9 @@ def LoginCompany(request):
 
 @allowed_users(allowed_roles='startup')
 def Dashboard(request):
-    return render(request, 'company/dashboard.html')
+    stock = PostModel.objects.all()
+    context = {'stocks':stock}
+    return render(request, 'company/dashboard.html',context)
 
 
 @allowed_users(allowed_roles='startup')
@@ -66,3 +68,16 @@ def LogoutComp(request):
     logout(request)
     return redirect('comp-home')
 
+
+def UpdateStock(request, stock_id):
+    Stock = PostModel.objects.get(pk=stock_id)
+    form = PostForm(request.POST or None, request.FILES or None, instance=Stock)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            print("saved successfully")
+            return redirect('comp-home')
+        else:
+            print("error" , form.errors)
+    context = {'Stock':Stock,'form':form}
+    return render(request, 'company/update_stock.html',context)

@@ -3,7 +3,7 @@
 
 {% block content %}
 <br><br>
-<!-- <section>
+ <section>
     <h4 class="display-3 text-center">Dashboard</h4>
     {% for stock in stocks %}
     <table class="table">
@@ -22,14 +22,14 @@
             <th scope="row">{{ stock.id }}</th>
             <td>{{ stock.name }}</td>
             <td>{{ stock.price }}</td>
-            <td>12-12-12</td>
+            <td>{{ stock.created_at }}</td>
 
-            <td><button class="btn  btn-outline-danger">Delete</button></td>
-            <td><button class="btn  btn-outline-success">Update</button></td>
+            <td><a class="btn  btn-outline-danger" href="">Delete</a></td>
+            <td><a class="btn  btn-outline-success" href="{% url 'update' stock.pk %}">Update</a></td>
           </tr>
         </tbody>
       </table>
 {% endfor %}
-</section> -->
+</section> 
 
 {% endblock%}

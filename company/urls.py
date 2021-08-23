@@ -8,6 +8,7 @@ urlpatterns = [
     path('loginComp', views.LoginCompany, name='login-comp'),
     path('dashboardComp', views.Dashboard, name='dashboard-comp'),
     path('post', views.Post, name='post'),
+    path('update/<int:stock_id>', views.UpdateStock, name='update')
 
 
 ]
